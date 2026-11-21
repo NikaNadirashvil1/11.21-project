@@ -1,0 +1,210 @@
+*{
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+.section-1 {
+    width: 100%;
+    padding: clamp(1rem, 4vw, 3rem);
+}
+
+/* Table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px auto;
+    background-color: white;
+}
+
+caption {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px;
+    color: brown;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+thead th {
+    background-color: #f0f1f8;
+    color: black;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tfoot {
+    background-color: bisque;
+    font-weight: bold;
+}
+
+.grid-title {
+    text-align: center;
+    color: brown;
+    margin: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.card-featured {
+    grid-column: span 2;
+}
+
+.card-tall {
+    grid-row: span 2;
+}
+
+.card {
+    background-color: antiquewhite;
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    background-color: bisque;
+    transform: scale(1.02);
+}
+
+.card h3 {
+    color: brown;
+}
+@media (max-width: 600px) {
+    .card-featured {
+        grid-column: span 1;
+    }
+
+    .card-tall {
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 320px) {
+    .section-1 {
+        padding: 10px;
+    }
+
+    th, td {
+        padding: 6px;
+        font-size: 13px;
+    }
+}
+
+.page {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+        "header"
+        "main"
+        "sidebar"
+        "footer";
+}
+
+@media (min-width: 768px) {
+    .page {
+        grid-template-columns: 220px 1fr;
+        grid-template-areas:
+            "header header"
+            "sidebar main"
+            "footer footer";
+    }
+}
+
+
+.header  { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main    { grid-area: main; }
+.footer  { grid-area: footer; }
+
+
+.card-center, .hero {
+    display: grid;
+    place-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    background-color: aqua;
+}
+
+
+@keyframes Slide {
+    0%, 100% { transform: translateX(0px); }
+    50%{ transform: translateX(150px); }
+}
+
+@keyframes Bounce {
+    0%, 100% {transform: translateY(0px);}
+    50% {transform: translateY(20px);}
+}
+@keyframes Buttonbounce {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.Anim{
+    width: 150px;
+    height: 150px;
+    background-color: aquamarine;
+    text-align: center;
+    padding: 35px;
+    animation: Slide 1.5s linear infinite;
+}
+
+.Anim2{
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    text-align: center;
+    padding: 35px;
+    animation: Bounce 0.5s ease 2s forwards;
+/* forwards აკეთებს იმას რომ ანიმაციის დასრულებისას ბოლო მდგომარეობა შეინარჩუნოს, ანუ როდესაც ბრაუზერის გახსნიდან 2 წამი გავა და ზემოთ ავაა 20 პიქსელით, იმ ადგილზე დარეჩეს და უკან არ დაბრუნდეს თავის 0px პოზიციაზე  */
+}
+
+
+/* ტრანსფორმს იმიტომ  ვიყენებთ ლეფტის და რაითის ნაცვლად რადგან ისინი Layout-ს არ იწვევს და ანიმაცია უფრო გლუვია. */
+
+.Button{
+    height: 150px;
+    width: 150px;
+    background-color: chocolate;
+}
+
+
+
+.Button:hover{
+    animation: Buttonbounce 0.5s ease 2s forwards;   
+}
+
+/* @media (prefers-reduced-motion: reduce) {
+  .Anim,.Anim2 {
+    animation: none;
+  } */ მას ეს როდესაც გამოვიყენე საერთოდ ყველა ანიმაცია გაშეშდა და რეფერშისასაც აღარ აკეთებდნენ ანიმაციას და გავთიშე იქნებ მითხრათ რისი ბრალიიყო  
+ 
+
