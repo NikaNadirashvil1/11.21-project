@@ -141,12 +141,45 @@ tfoot {
     place-items: center;
 }
 
-form{
+
+form {
     display: flex;
     flex-direction: column;
-    width: 150px;
-    background-color: aqua;
+    gap: 10px;
+    width: min(100%, 400px);
+    padding: 20px;
+    background-color: antiquewhite;
+    border: 2px solid brown;
+    border-radius: 15px;
 }
+
+form input,
+form select,
+form textarea {
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+}
+
+form button {
+    padding: 10px;
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+form fieldset {
+    border: 1px solid brown;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+form fieldset input {
+    width: auto;
+}
+
 
 
 @keyframes Slide {
@@ -205,6 +238,15 @@ form{
 /* @media (prefers-reduced-motion: reduce) {
   .Anim,.Anim2 {
     animation: none;
-  } */ მას ეს როდესაც გამოვიყენე საერთოდ ყველა ანიმაცია გაშეშდა და რეფერშისასაც აღარ აკეთებდნენ ანიმაციას და გავთიშე იქნებ მითხრათ რისი ბრალიიყო  
- 
+  } */
+
+
+
+  /* HTML ვალიდაციის დაკვირვებები:
+   - required: ამოწმებს, რომ აუცილებელი ველი ცარიელი არ დარჩეს გაგზავნისას.
+   - minlength / maxlength: ამოწმებს სიმბოლოების მინიმალურ და მაქსიმალურ რაოდენობას username ველში.
+   - type="email": ამოწმებს, რომ ტექსტი შეიცავდეს "@" სიმბოლოს და ელფოსტის სტრუქტურას.
+   - min / max (age): ამოწმებს, რომ რიცხვი იყოს 16-დან 100-მდე შუალედში.
+   - pattern + title (phone): ამოწმებს 9-ნიშნა ნომერს, რომელიც იწყება 5-ით (5[0-9]{8}), ხოლო შეცდომისას აჩვენებს title ტექსტს.
+*/
 
